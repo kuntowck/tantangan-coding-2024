@@ -29,14 +29,29 @@
 // }
 
 
-function maximum(array $array)
+// function maximum(array $array)
+// {
+//    return max(array_map(fn ($e) => $e, $array));
+// }
+
+// function minimum($array)
+// {
+//    return min(array_map(fn ($e) => $e, $array));
+// }
+
+
+function maximum($array)
 {
-   return max(array_map(fn ($e) => $e, $array));
+   rsort($array, SORT_NUMERIC);
+
+   return $array[0];
 }
 
 function minimum($array)
 {
-   return min(array_map(fn ($e) => $e, $array));
+   sort($array, SORT_NUMERIC);
+
+   return $array[0];
 }
 
 echo maximum([222, 333, 444]);
